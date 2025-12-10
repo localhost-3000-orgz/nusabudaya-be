@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, JoinColumn, CreateDateColumn } from "typeorm";
 import { Province } from "src/provinces/entities/province.entity";
 
 @Entity('quizzes')
@@ -21,4 +21,7 @@ export class Quiz {
   @ManyToOne(() => Province, (province) => province.quizzes)
   @JoinColumn({ name: 'province_id' })
   province: Province;
+
+  @CreateDateColumn()
+  created_at: Date;
 }

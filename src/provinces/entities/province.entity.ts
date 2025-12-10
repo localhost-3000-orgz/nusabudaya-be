@@ -8,6 +8,7 @@ import { TraditionalHouse } from "src/traditional-houses/entities/traditional-ho
 import { TraditionalWeapon } from "src/traditional-weapons/entities/traditional-weapon.entity";
 import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Quiz } from "src/quizzes/entities/quiz.entity";
+import { GameResult } from "src/game-results/entities/game-result.entity";
 
 @Entity('provinces')
 export class Province {
@@ -64,4 +65,7 @@ export class Province {
 
   @OneToMany(() => Quiz, (quiz) => quiz.province)
   quizzes: Quiz[];
+  
+  @OneToMany(() => GameResult, (gameResult) => gameResult.province)
+  game_results: GameResult[];
 }
