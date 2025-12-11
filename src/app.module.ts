@@ -26,6 +26,8 @@ import { QuizzesModule } from './quizzes/quizzes.module';
 import { Quiz } from './quizzes/entities/quiz.entity';
 import { GameResultsModule } from './game-results/game-results.module';
 import { GameResult } from './game-results/entities/game-result.entity';
+import { ImageGuessesModule } from './image-guesses/image-guesses.module';
+import { ImageGuess } from './image-guesses/entities/image-guess.entity';
 
 @Module({
   imports: [
@@ -53,6 +55,7 @@ import { GameResult } from './game-results/entities/game-result.entity';
           User,
           Quiz,
           GameResult,
+          ImageGuess,
         ],
         synchronize: true,
       }),
@@ -72,6 +75,7 @@ import { GameResult } from './game-results/entities/game-result.entity';
     UsersModule,
     QuizzesModule,
     GameResultsModule,
+    ImageGuessesModule,
   ],
 })
 export class AppModule {}

@@ -9,6 +9,7 @@ import { TraditionalWeapon } from "src/traditional-weapons/entities/traditional-
 import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Quiz } from "src/quizzes/entities/quiz.entity";
 import { GameResult } from "src/game-results/entities/game-result.entity";
+import { ImageGuess } from "src/image-guesses/entities/image-guess.entity";
 
 @Entity('provinces')
 export class Province {
@@ -68,4 +69,7 @@ export class Province {
   
   @OneToMany(() => GameResult, (gameResult) => gameResult.province)
   game_results: GameResult[];
+
+  @OneToMany(() => ImageGuess, (imageGuest) => imageGuest.province)
+  image_guesses: ImageGuess[];
 }
