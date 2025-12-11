@@ -10,6 +10,7 @@ import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } f
 import { Quiz } from "src/quizzes/entities/quiz.entity";
 import { GameResult } from "src/game-results/entities/game-result.entity";
 import { ImageGuess } from "src/image-guesses/entities/image-guess.entity";
+import { Achievement } from "src/achievements/entities/achievement.entity";
 
 @Entity('provinces')
 export class Province {
@@ -72,4 +73,7 @@ export class Province {
 
   @OneToMany(() => ImageGuess, (imageGuest) => imageGuest.province)
   image_guesses: ImageGuess[];
+  
+  @OneToMany(() => Achievement, (achievement) => achievement.province)
+  achievements: Achievement[];
 }

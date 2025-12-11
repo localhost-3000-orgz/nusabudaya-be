@@ -1,3 +1,4 @@
+import { Achievement } from "src/achievements/entities/achievement.entity";
 import { GameResult } from "src/game-results/entities/game-result.entity";
 import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
@@ -29,4 +30,7 @@ export class User {
 
   @OneToMany(() => GameResult, (gameResult) => gameResult.user)
   game_results: GameResult[];
+  
+  @OneToMany(() => Achievement, (achievement) => achievement.user)
+  achievements: Achievement[];
 }
