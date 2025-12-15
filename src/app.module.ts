@@ -30,6 +30,7 @@ import { ImageGuessesModule } from './image-guesses/image-guesses.module';
 import { ImageGuess } from './image-guesses/entities/image-guess.entity';
 import { AchievementsModule } from './achievements/achievements.module';
 import { Achievement } from './achievements/entities/achievement.entity';
+import { AiModule } from './ai/ai.module';
 
 @Module({
   imports: [
@@ -39,11 +40,12 @@ import { Achievement } from './achievements/entities/achievement.entity';
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => ({
         type: 'postgres',
-        host: configService.get<string>('DB_HOST', 'localhost'),
-        port: Number(configService.get<string>('DB_PORT', '5432')),
-        username: configService.get<string>('DB_USERNAME', 'postgres'),
-        password: configService.get<string>('DB_PASSWORD', 'postgres'),
-        database: configService.get<string>('DB_DATABASE', 'nusa_budaya'),
+        url: configService.get<string>('DATABASE_URL'),
+        // host: configService.get<string>('DB_HOST', 'localhost'),
+        // port: Number(configService.get<string>('DB_PORT', '5432')),
+        // username: configService.get<string>('DB_USERNAME', 'postgres'),
+        // password: configService.get<string>('DB_PASSWORD', 'postgres'),
+        // database: configService.get<string>('DB_DATABASE', 'nusabudaya'),
         entities: [
           Province,
           TraditionalHouse,
@@ -80,6 +82,7 @@ import { Achievement } from './achievements/entities/achievement.entity';
     GameResultsModule,
     ImageGuessesModule,
     AchievementsModule,
+    AiModule,
   ],
 })
 export class AppModule {}
