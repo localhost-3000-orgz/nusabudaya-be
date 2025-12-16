@@ -65,20 +65,6 @@ export class AiService {
          "history": string, // Sejarah singkat penciptaan atau asal usul
          "relatedCultures": string[] // Array berisi 3-5 hal terkait (alat musik pengiring, bahan dasar, dll)
          }
-   
-         **CONTOH DATA YANG DIHARAPKAN (JIKA GAMBAR ADALAH TARI JAIPONG):**
-         {
-            "isCultural": true,
-            "category": "Tarian Tradisional",
-            "name": "Tari Jaipong",
-            "province": "Jawa Barat",
-            "description": "Tari Jaipong adalah tarian rakyat modern dari Jawa Barat yang menggabungkan unsur pencak silat, wayang golek, dan ketuk tilu.",
-            "confidence": 95,
-            "culturalMeaning": "Simbol kebebasan berekspresi, keberanian, dan sifat masyarakat Sunda yang ramah namun dinamis (someah).",
-            "mainCharacteristic": ["Gerakan pinggul yang dinamis (geol)", "Kostum kebaya cerah ketat", "Gerakan tangan patah-patah (bukaan)"],
-            "history": "Diciptakan oleh Gugum Gumbira pada tahun 1970-an sebagai bentuk perlawanan budaya terhadap musik asing, berakar dari Ketuk Tilu.",
-            "relatedCultures": ["Alat Musik Gendang", "Tari Ketuk Tilu", "Suku Sunda", "Wayang Golek"]
-         }
       `;
 
       try {
