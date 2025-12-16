@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, HttpStatus, Query } 
 import { TraditionsService } from './traditions.service';
 import { CreateTraditionDto } from './dto/create-tradition.dto';
 import { UpdateTraditionDto } from './dto/update-tradition.dto';
-import { ResponseHelper } from 'src/common/helpers/response.helper';
+import { ResponseHelper } from '../common/helpers/response.helper';
 
 @Controller('traditions')
 export class TraditionsController {

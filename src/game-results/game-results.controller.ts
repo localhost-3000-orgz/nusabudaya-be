@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Param, Delete, HttpStatus, UseGuards, Req } from '@nestjs/common';
 import { GameResultsService } from './game-results.service';
 import { CreateGameResultDto } from './dto/create-game-result.dto';
-import { ResponseHelper } from 'src/common/helpers/response.helper';
+import { ResponseHelper } from '../common/helpers/response.helper';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
 
 @Controller('game-results')

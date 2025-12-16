@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, HttpStatus, Query } 
 import { TraditionalHousesService } from './traditional-houses.service';
 import { CreateTraditionalHouseDto } from './dto/create-traditional-house.dto';
 import { UpdateTraditionalHouseDto } from './dto/update-traditional-house.dto';
-import { ResponseHelper } from 'src/common/helpers/response.helper';
+import { ResponseHelper } from '../common/helpers/response.helper';
 
 @Controller('traditional-houses')
 export class TraditionalHousesController {

@@ -1,7 +1,7 @@
 import { Controller, HttpStatus, ParseFilePipeBuilder, Post, UploadedFile, UseInterceptors } from '@nestjs/common';
 import { AiService } from './ai.service';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { ResponseHelper } from 'src/common/helpers/response.helper';
+import { ResponseHelper } from '../common/helpers/response.helper';
 
 @Controller('ai')
 export class AiController {

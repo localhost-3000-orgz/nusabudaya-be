@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, HttpStatus, Query } 
 import { MusicalInstrumentsService } from './musical-instruments.service';
 import { CreateMusicalInstrumentDto } from './dto/create-musical-instrument.dto';
 import { UpdateMusicalInstrumentDto } from './dto/update-musical-instrument.dto';
-import { ResponseHelper } from 'src/common/helpers/response.helper';
+import { ResponseHelper } from '../common/helpers/response.helper';
 
 @Controller('musical-instruments')
 export class MusicalInstrumentsController {

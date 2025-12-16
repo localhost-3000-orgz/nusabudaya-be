@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Req, UseGuards, HttpStatus, Delete } from 
 import { AchievementsService } from './achievements.service';
 import { CreateAchievementDto } from './dto/create-achievement.dto';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
-import { ResponseHelper } from 'src/common/helpers/response.helper';
+import { ResponseHelper } from '../common/helpers/response.helper';
 
 @Controller('achievements')
 @UseGuards(JwtAuthGuard)

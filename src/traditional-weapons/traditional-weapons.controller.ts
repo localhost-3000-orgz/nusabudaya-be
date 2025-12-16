@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, HttpStatus, Query } 
 import { TraditionalWeaponsService } from './traditional-weapons.service';
 import { CreateTraditionalWeaponDto } from './dto/create-traditional-weapon.dto';
 import { UpdateTraditionalWeaponDto } from './dto/update-traditional-weapon.dto';
-import { ResponseHelper } from 'src/common/helpers/response.helper';
+import { ResponseHelper } from '../common/helpers/response.helper';
 
 @Controller('traditional-weapons')
 export class TraditionalWeaponsController {

@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, HttpStatus, Query } 
 import { RegionalSongsService } from './regional-songs.service';
 import { CreateRegionalSongDto } from './dto/create-regional-song.dto';
 import { UpdateRegionalSongDto } from './dto/update-regional-song.dto';
-import { ResponseHelper } from 'src/common/helpers/response.helper';
+import { ResponseHelper } from '../common/helpers/response.helper';
 
 @Controller('regional-songs')
 export class RegionalSongsController {

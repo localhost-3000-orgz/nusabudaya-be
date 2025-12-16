@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, HttpStatus, Query } 
 import { TourismSpotsService } from './tourism-spots.service';
 import { CreateTourismSpotDto } from './dto/create-tourism-spot.dto';
 import { UpdateTourismSpotDto } from './dto/update-tourism-spot.dto';
-import { ResponseHelper } from 'src/common/helpers/response.helper';
+import { ResponseHelper } from '../common/helpers/response.helper';
 
 @Controller('tourism-spots')
 export class TourismSpotsController {

@@ -13,7 +13,7 @@ import {
 import { ImageGuessesService } from './image-guesses.service';
 import { CreateImageGuessDto } from './dto/create-image-guess.dto';
 import { UpdateImageGuessDto } from './dto/update-image-guess.dto';
-import { ResponseHelper } from 'src/common/helpers/response.helper';
+import { ResponseHelper } from '../common/helpers/response.helper';
 
 @Controller('image-guesses')
 export class ImageGuessesController {

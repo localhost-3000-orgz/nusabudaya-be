@@ -2,7 +2,7 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, HttpStatus, Query } 
 import { CulinariesService } from './culinaries.service';
 import { CreateCulinaryDto } from './dto/create-culinary.dto';
 import { UpdateCulinaryDto } from './dto/update-culinary.dto';
-import { ResponseHelper } from 'src/common/helpers/response.helper';
+import { ResponseHelper } from '../common/helpers/response.helper';
 
 @Controller('culinaries')
 export class CulinariesController {
