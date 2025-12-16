@@ -14,7 +14,13 @@ export class AiService {
       }
 
       this.genAI = new GoogleGenerativeAI(apiKey)
-      this.model = this.genAI.getGenerativeModel({ model: 'gemini-2.5-flash-lite'})
+      this.model = this.genAI.getGenerativeModel({ 
+         model: 'gemini-2.5-flash-lite',
+         generationConfig: {
+            responseMimeType: "application/json",
+            temperature: 0.4,
+         }
+      })
    }
 
    async analyzeImage(file: Express.Multer.File) {
@@ -30,24 +36,48 @@ export class AiService {
       }
 
       const prompt = `
-         Anda adalah ahli antropologi dan budaya Indonesia (NusaBudaya AI).
-         Tugas: Analisis gambar yang diunggah.
-         
-         Langkah analisis:
-         1. Identifikasi apakah objek dalam gambar adalah bagian dari budaya Indonesia (Batik, Rumah Adat, Alat Musik, Senjata, Makanan, Tarian, Situs Sejarah, dll).
-         2. Jika BUKAN objek budaya Indonesia atau gambar tidak jelas, set "isCultural": false.
-         3. Jika YA, berikan detail mendalam.
-
-         Output WAJIB berupa JSON RAW (tanpa markdown code block) dengan struktur:
+         Anda adalah **Kurator Senior Museum Nasional Indonesia** & **Ahli Antropologi Budaya**.
+         Keahlian Anda mencakup identifikasi mendalam terhadap Wastra (Kain), Arsitektur Vernakular, Senjata Tradisional, Alat Musik, Kuliner, dan Seni Pertunjukan dari 38 Provinsi di Indonesia.
+   
+         **TUGAS:**
+         Lakukan analisis visual mendalam terhadap gambar yang diberikan (Pixel-by-Pixel Analysis) untuk menentukan apakah ini adalah objek budaya Indonesia yang valid.
+   
+         **LANGKAH BERPIKIR (CHAIN OF THOUGHT):**
+         1.  **Observasi Visual:** Identifikasi ciri fisik utama (motif, bahan, siluet, warna, tekstur).
+         2.  **Validasi Budaya:** Apakah ciri tersebut cocok dengan database budaya Nusantara?
+            - Jika gambar adalah objek umum (selfie, hewan biasa, gedung modern, pemandangan tanpa situs sejarah), tandai sebagai NON-BUDAYA.
+         3.  **Kategorisasi Ketat:** Masukkan HANYA ke salah satu dari 8 kategori:
+            ["Tarian Tradisional", "Rumah Adat", "Pakaian Adat", "Alat Musik", "Senjata Tradisional", "Makanan Khas", "Kerajinan Tangan", "Upacara Adat"].
+         4.  **Ekstraksi Detail:** Jika valid, susun sejarah, filosofi, dan karakteristiknya.
+   
+         **FORMAT OUTPUT (JSON SCHEMA):**
+         Berikan respon HANYA dalam JSON dengan struktur berikut:
+   
          {
-            "isCultural": boolean,
-            "name": "Nama Objek",
-            "category": "Kategori (contoh: Wastra, Arsitektur, Kuliner)",
-            "origin": "Asal Daerah/Provinsi (Perkiraan)",
-            "description": "Deskripsi singkat 2-3 kalimat.",
-            "history": "Sejarah singkat atau latar belakang.",
-            "philosophy": "Makna filosofis dibalik objek ini.",
-            "confidence": "Angka 1-100 (tingkat keyakinan AI)"
+         "isCultural": boolean, // true jika valid budaya Indonesia, false jika tidak
+         "category": string, // Salah satu dari 8 kategori di atas. null jika isCultural false
+         "name": string, // Nama spesifik (Title Case). Contoh: "Tari Kecak", bukan "Tari Bali"
+         "province": string, // Nama Provinsi asal. Contoh: "Bali"
+         "description": string, // Deskripsi informatif & edukatif (2-3 kalimat)
+         "confidence": number, // Tingkat keyakinan AI (0-100)
+         "culturalMeaning": string, // Makna filosofis/simbolis mendalam
+         "mainCharacteristic": string[], // Array berisi 3-5 ciri visual yang terlihat di gambar
+         "history": string, // Sejarah singkat penciptaan atau asal usul
+         "relatedCultures": string[] // Array berisi 3-5 hal terkait (alat musik pengiring, bahan dasar, dll)
+         }
+   
+         **CONTOH DATA YANG DIHARAPKAN (JIKA GAMBAR ADALAH TARI JAIPONG):**
+         {
+            "isCultural": true,
+            "category": "Tarian Tradisional",
+            "name": "Tari Jaipong",
+            "province": "Jawa Barat",
+            "description": "Tari Jaipong adalah tarian rakyat modern dari Jawa Barat yang menggabungkan unsur pencak silat, wayang golek, dan ketuk tilu.",
+            "confidence": 95,
+            "culturalMeaning": "Simbol kebebasan berekspresi, keberanian, dan sifat masyarakat Sunda yang ramah namun dinamis (someah).",
+            "mainCharacteristic": ["Gerakan pinggul yang dinamis (geol)", "Kostum kebaya cerah ketat", "Gerakan tangan patah-patah (bukaan)"],
+            "history": "Diciptakan oleh Gugum Gumbira pada tahun 1970-an sebagai bentuk perlawanan budaya terhadap musik asing, berakar dari Ketuk Tilu.",
+            "relatedCultures": ["Alat Musik Gendang", "Tari Ketuk Tilu", "Suku Sunda", "Wayang Golek"]
          }
       `;
 

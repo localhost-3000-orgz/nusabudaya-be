@@ -14,11 +14,14 @@ async function bootstrap() {
     }),
   );
   
+  app.enableCors();
+
   if (process.env.VERCEL) {
     await app.init();
     const expressApp = app.getHttpAdapter().getInstance();
     return expressApp;
   } else {
+    
     await app.listen(process.env.PORT ?? 3000);
   }
 }
