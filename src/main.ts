@@ -14,7 +14,15 @@ async function bootstrap() {
     }),
   );
   
-  await app.listen(process.env.PORT ?? 3000);
+  if (process.env.VERCEL) {
+    await app.init();
+    // Return instance Express agar bisa di-handle oleh Vercel
+    const expressApp = app.getHttpAdapter().getInstance();
+    return expressApp;
+  } else {
+    // Jika di local, jalankan server seperti biasa
+    await app.listen(process.env.PORT ?? 3000);
+  }
 }
 
 bootstrap();
