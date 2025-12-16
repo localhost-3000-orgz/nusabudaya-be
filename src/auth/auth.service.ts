@@ -20,7 +20,7 @@ export class AuthService {
       user = await this.usersService.create({
         email: req.user.email,
         firstName: req.user.firstName,
-        lastName: req.user.lastName,
+        lastName: req.user.lastName || '',
         picture: req.user.picture,
       });
     }
