@@ -17,6 +17,7 @@ import { GameResultsModule } from './game-results/game-results.module';
 import { ImageGuessesModule } from './image-guesses/image-guesses.module';
 import { AchievementsModule } from './achievements/achievements.module';
 import { AiModule } from './ai/ai.module';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [
@@ -50,5 +51,6 @@ import { AiModule } from './ai/ai.module';
     AchievementsModule,
     AiModule,
   ],
+  controllers: [AppController],
 })
 export class AppModule {}
