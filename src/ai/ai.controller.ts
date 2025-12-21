@@ -33,12 +33,12 @@ export class AiController {
       );
     }
 
-    const maxSize = 10 * 1024 * 1024;
+    const maxSize = 5 * 1024 * 1024;
     if (file.size > maxSize) {
       throw new HttpException(
         ResponseHelper.error(
           null,
-          `Ukuran file terlalu besar (${(file.size / 1024 / 1024).toFixed(2)} MB). Maksimal 10MB.`,
+          `Ukuran file terlalu besar (${(file.size / 1024 / 1024).toFixed(2)} MB). Maksimal 5MB.`,
           HttpStatus.PAYLOAD_TOO_LARGE
         ),
         HttpStatus.PAYLOAD_TOO_LARGE
