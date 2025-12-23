@@ -20,6 +20,9 @@ export class Province {
   @Column()
   name: string;
 
+  @Column({ unique: true, nullable: true})
+  slug: string;
+
   @Column()
   capital_city: string;
 

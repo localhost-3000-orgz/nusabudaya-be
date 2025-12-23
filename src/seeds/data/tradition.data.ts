@@ -1,7 +1,7 @@
 const traditionsData = [
   // --- SUMATERA ---
   {
-    province_name: 'Nanggroe Aceh Darussalam',
+    province_name: 'Aceh',
     name: 'Meugang',
     description: 'Tradisi memasak daging dan menikmatinya bersama keluarga sehari sebelum Ramadhan, Idul Fitri, dan Idul Adha.',
     event_date: '1 Ramadhan, 1 Syawal, 10 Dzulhijjah',
@@ -63,7 +63,7 @@ const traditionsData = [
 
   // --- JAWA ---
   {
-    province_name: 'DKI Jakarta',
+    province_name: 'Jakarta Raya',
     name: 'Palang Pintu',
     description: 'Tradisi adu pantun dan silat dalam prosesi pernikahan adat Betawi sebelum pengantin pria masuk.',
     event_date: 'Resepsi Pernikahan',
@@ -87,7 +87,7 @@ const traditionsData = [
     event_date: 'Sehari sebelum Ramadhan',
   },
   {
-    province_name: 'DI Yogyakarta',
+    province_name: 'Daerah Istimewa Yogyakarta',
     name: 'Sekaten',
     description: 'Rangkaian kegiatan tahunan memperingati Maulid Nabi Muhammad SAW di Alun-alun Utara.',
     event_date: '5-12 Rabiul Awal',

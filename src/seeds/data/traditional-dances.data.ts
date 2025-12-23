@@ -1,7 +1,7 @@
 const traditionalDancesData = [
   // --- SUMATERA ---
   {
-    province_name: 'Nanggroe Aceh Darussalam',
+    province_name: 'Aceh',
     name: 'Tari Saman',
     description: 'Tarian "Tangan Seribu" yang menampilkan kekompakan gerakan tangan, badan, dan kepala yang sangat cepat tanpa iringan musik, hanya nyanyian syair.',
     video_url: 'https://www.youtube.com/watch?v=dummy_saman',
@@ -63,7 +63,7 @@ const traditionalDancesData = [
 
   // --- JAWA ---
   {
-    province_name: 'DKI Jakarta',
+    province_name: 'Jakarta Raya',
     name: 'Tari Topeng Betawi',
     description: 'Pertunjukan teater tari di mana penari mengenakan topeng kayu dan bercerita melalui gerakan lincah khas Betawi.',
     video_url: 'https://www.youtube.com/watch?v=dummy_topeng',
@@ -87,7 +87,7 @@ const traditionalDancesData = [
     video_url: 'https://www.youtube.com/watch?v=dummy_gambyong',
   },
   {
-    province_name: 'DI Yogyakarta',
+    province_name: 'Daerah Istimewa Yogyakarta',
     name: 'Tari Serimpi',
     description: 'Tarian sakral keraton yang ditarikan oleh empat orang putri, melambangkan empat unsur dunia (api, air, angin, tanah).',
     video_url: 'https://www.youtube.com/watch?v=dummy_serimpi',

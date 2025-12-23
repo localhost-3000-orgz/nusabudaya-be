@@ -1,7 +1,7 @@
 const regionalSongsData = [
   // --- SUMATERA ---
   {
-    province_name: 'Nanggroe Aceh Darussalam',
+    province_name: 'Aceh',
     title: 'Bungong Jeumpa',
     lyrics: `Bungong jeumpa bungong jeumpa megah di Aceh\nBungong teuleubeh, teuleubeh indah lagoina\nPutih kuneng meujampu mirah\nBungong si ulah indah lagoina`,
     audio_url: 'https://example.com/songs/bungong-jeumpa.mp3',
@@ -63,7 +63,7 @@ const regionalSongsData = [
 
   // --- JAWA ---
   {
-    province_name: 'DKI Jakarta',
+    province_name: 'Jakarta Raya',
     title: 'Kicir-Kicir',
     lyrics: `Kicir kicir ini lagunya\nLagu lama ya tuan dari Jakarta\nSaya menyanyi ya tuan memang sengaja\nUntuk menghibur menghibur hati nan duka`,
     audio_url: 'https://example.com/songs/kicir-kicir.mp3',
@@ -87,7 +87,7 @@ const regionalSongsData = [
     audio_url: 'https://example.com/songs/gundul-pacul.mp3',
   },
   {
-    province_name: 'DI Yogyakarta',
+    province_name: 'Daerah Istimewa Yogyakarta',
     title: 'Suwe Ora Jamu',
     lyrics: `Suwe ora jamu\nJamu godhong telo\nSuwe ora ketemu\nKetemu pisan gawe gelo`,
     audio_url: 'https://example.com/songs/suwe-ora-jamu.mp3',

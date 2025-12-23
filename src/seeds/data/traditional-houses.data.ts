@@ -1,7 +1,7 @@
 const traditionalHousesData = [
   // --- SUMATERA ---
   {
-    province_name: 'Nanggroe Aceh Darussalam',
+    province_name: 'Aceh',
     name: 'Rumoh Aceh (Krong Bade)',
     description: 'Rumah panggung kayu dengan tinggi tiang 2,5-3 meter. Memiliki tangga ganjil di depan dan pintu rendah yang mengharuskan tamu menunduk sebagai tanda hormat.',
     image_url: 'https://example.com/houses/rumoh-aceh.jpg',
@@ -63,7 +63,7 @@ const traditionalHousesData = [
 
   // --- JAWA ---
   {
-    province_name: 'DKI Jakarta',
+    province_name: 'Jakarta Raya',
     name: 'Rumah Kebaya',
     description: 'Rumah adat Betawi dengan atap berbentuk pelana yang dilipat, jika dilihat dari samping terlihat seperti lipatan kebaya. Memiliki teras luas untuk menerima tamu.',
     image_url: 'https://example.com/houses/rumah-kebaya.jpg',
@@ -87,7 +87,7 @@ const traditionalHousesData = [
     image_url: 'https://example.com/houses/joglo-jateng.jpg',
   },
   {
-    province_name: 'DI Yogyakarta',
+    province_name: 'Daerah Istimewa Yogyakarta',
     name: 'Bangsal Kencono',
     description: 'Bagian utama dari Keraton Yogyakarta, sebuah paviliun terbuka (pendopo) agung dengan arsitektur Joglo yang sangat megah dan sakral.',
     image_url: 'https://example.com/houses/bangsal-kencono.jpg',

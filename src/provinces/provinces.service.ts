@@ -22,7 +22,21 @@ export class ProvincesService {
   }
 
   async findOne(id: number): Promise<Province | null> {
-    return await this.provinceRepo.findOneBy({ id });
+    let query = this.provinceRepo
+      .createQueryBuilder('province');
+    query = this.applyRelations(query);
+    return await query
+      .where('province.id = :id', { id })
+      .getOne();
+  }
+
+  async findBySlug(slug: string): Promise<Province | null> {
+    let query = this.provinceRepo
+      .createQueryBuilder('province');
+    query = this.applyRelations(query);
+    return await query
+      .where('province.slug = :slug', { slug })
+      .getOne();
   }
 
   async update(id: number, updateProvinceDto: UpdateProvinceDto): Promise<Province | null> {
@@ -32,5 +46,17 @@ export class ProvincesService {
 
   async remove(id: number): Promise<void> {
     await this.provinceRepo.delete(id);
+  }
+
+  private applyRelations(query: any): any {
+    return query
+      .leftJoinAndSelect('province.traditionalHouses', 'traditionalHouses')
+      .leftJoinAndSelect('province.culinaries', 'culinaries')
+      .leftJoinAndSelect('province.musicalInstruments', 'musicalInstruments')
+      .leftJoinAndSelect('province.regionalSongs', 'regionalSongs')
+      .leftJoinAndSelect('province.tourismSpots', 'tourismSpots')
+      .leftJoinAndSelect('province.traditionalDances', 'traditionalDances')
+      .leftJoinAndSelect('province.traditionalWeapons', 'traditionalWeapons')
+      .leftJoinAndSelect('province.traditions', 'traditions');
   }
 }
