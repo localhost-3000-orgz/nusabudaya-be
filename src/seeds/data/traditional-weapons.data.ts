@@ -1,7 +1,7 @@
 const traditionalWeaponsData = [
   // --- SUMATERA ---
   {
-    province_name: 'Nanggroe Aceh Darussalam',
+    province_name: 'Aceh',
     name: 'Rencong',
     description: 'Senjata tikam belati yang mata pisaunya melengkung berbentuk huruf L, melambangkan lafaz "Bismillah". Dahulu digunakan para pejuang Aceh melawan penjajah.',
     image_url: 'https://example.com/weapons/rencong.jpg',
@@ -63,7 +63,7 @@ const traditionalWeaponsData = [
 
   // --- JAWA ---
   {
-    province_name: 'DKI Jakarta',
+    province_name: 'Jakarta Raya',
     name: 'Golok Betawi',
     description: 'Parang pendek dengan satu sisi tajam. Simbol jawara Betawi, namun juga alat serbaguna sehari-hari. Ada jenis Golok Simpenan (pusaka) dan Golok Gawe (kerja).',
     image_url: 'https://example.com/weapons/golok-betawi.jpg',
@@ -87,7 +87,7 @@ const traditionalWeaponsData = [
     image_url: 'https://example.com/weapons/keris-jawa.jpg',
   },
   {
-    province_name: 'DI Yogyakarta',
+    province_name: 'Daerah Istimewa Yogyakarta',
     name: 'Tombak Kyai Pleret',
     description: 'Selain Keris, tombak merupakan senjata utama prajurit keraton. Kyai Pleret adalah pusaka legendaris Mataram Islam.',
     image_url: 'https://example.com/weapons/tombak-yogya.jpg',

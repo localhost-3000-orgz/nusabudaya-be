@@ -1,7 +1,7 @@
 const tourismSpotsData = [
   // --- SUMATERA ---
   {
-    province_name: 'Nanggroe Aceh Darussalam',
+    province_name: 'Aceh',
     name: 'Masjid Raya Baiturrahman',
     location_address: 'Jl. Moh. Jam No.1, Kp. Baru, Kec. Baiturrahman, Kota Banda Aceh, Aceh',
     maps_coordinate: '5.553611, 95.317222',
@@ -83,9 +83,9 @@ const tourismSpotsData = [
 
   // --- JAWA ---
   {
-    province_name: 'DKI Jakarta',
+    province_name: 'Jakarta Raya',
     name: 'Monumen Nasional (Monas)',
-    location_address: 'Gambir, Kecamatan Gambir, Kota Jakarta Pusat, DKI Jakarta',
+    location_address: 'Gambir, Kecamatan Gambir, Kota Jakarta Pusat, Jakarta Raya',
     maps_coordinate: '-6.175389, 106.827167',
     description: 'Tugu peringatan setinggi 132 meter untuk mengenang perlawanan dan perjuangan rakyat Indonesia merebut kemerdekaan.',
     image_url: 'https://example.com/tourism/monas.jpg',
@@ -115,7 +115,7 @@ const tourismSpotsData = [
     image_url: 'https://example.com/tourism/borobudur.jpg',
   },
   {
-    province_name: 'DI Yogyakarta',
+    province_name: 'Daerah Istimewa Yogyakarta',
     name: 'Keraton Yogyakarta',
     location_address: 'Jl. Rotowijayan Blok No. 1, Panembahan, Kecamatan Kraton, Kota Yogyakarta, DIY',
     maps_coordinate: '-7.805284, 110.364203',

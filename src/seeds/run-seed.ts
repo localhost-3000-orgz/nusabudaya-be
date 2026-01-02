@@ -48,7 +48,7 @@ const dataSource = new DataSource({
     ImageGuess,
     Achievement,
   ],
-  synchronize: false,
+  synchronize: true,
 });
 
 const runSeed = async () => {
@@ -57,14 +57,14 @@ const runSeed = async () => {
     console.log('Database connected for seeding...');
 
     //===== START SEEDER =====
-    // await seedProvinces(dataSource);
-    // await seedTraditions(dataSource);
-    // await seedCulinaries(dataSource);
-    // await seedMusicalInstruments(dataSource);
-    // await seedTraditionalDances(dataSource);
-    // await seedTraditionalHouses(dataSource);
-    // await seedTraditionalWeapons(dataSource);
-    // await seedTraditionalSpots(dataSource);
+    await seedProvinces(dataSource);
+    await seedTraditions(dataSource);
+    await seedCulinaries(dataSource);
+    await seedMusicalInstruments(dataSource);
+    await seedTraditionalDances(dataSource);
+    await seedTraditionalHouses(dataSource);
+    await seedTraditionalWeapons(dataSource);
+    await seedTraditionalSpots(dataSource);
     await seedRegionalSongs(dataSource);
     //===== END SEEDER =====
 

@@ -3,7 +3,7 @@ import { CulinaryType } from "src/culinaries/entities/culinary.entity";
 const culinariesData = [
   // --- SUMATERA ---
   {
-    province_name: 'Nanggroe Aceh Darussalam',
+    province_name: 'Aceh',
     name: 'Mie Aceh',
     type: CulinaryType.MAKANAN,
     description: 'Mie kuning tebal dengan irisan daging sapi, kambing atau makanan laut, disajikan dalam sup sejenis kari yang gurih dan pedas.',
@@ -75,7 +75,7 @@ const culinariesData = [
 
   // --- JAWA ---
   {
-    province_name: 'DKI Jakarta',
+    province_name: 'Jakarta Raya',
     name: 'Kerak Telor',
     type: CulinaryType.JAJANAN,
     description: 'Makanan dari beras ketan putih, telur ayam/bebek, ebi (udang kering), dan kelapa sangrai.',
@@ -103,7 +103,7 @@ const culinariesData = [
     image_url: 'https://example.com/culinary/lumpia.jpg',
   },
   {
-    province_name: 'DI Yogyakarta',
+    province_name: 'Daerah Istimewa Yogyakarta',
     name: 'Gudeg',
     type: CulinaryType.MAKANAN,
     description: 'Makanan dari nangka muda yang dimasak dengan santan selama berjam-jam, rasanya cenderung manis.',

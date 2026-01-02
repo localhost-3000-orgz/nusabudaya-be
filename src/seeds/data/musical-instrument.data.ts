@@ -1,7 +1,7 @@
 const musicalInstrumentsData = [
   // --- SUMATERA ---
   {
-    province_name: 'Nanggroe Aceh Darussalam',
+    province_name: 'Aceh',
     name: 'Serune Kalee',
     cara_main: 'Ditiup',
     image_url: 'https://example.com/music/serune-kalee.jpg',
@@ -63,7 +63,7 @@ const musicalInstrumentsData = [
 
   // --- JAWA ---
   {
-    province_name: 'DKI Jakarta',
+    province_name: 'Jakarta Raya',
     name: 'Tehyan',
     cara_main: 'Digesek',
     image_url: 'https://example.com/music/tehyan.jpg',
@@ -87,7 +87,7 @@ const musicalInstrumentsData = [
     image_url: 'https://example.com/music/gamelan.jpg',
   },
   {
-    province_name: 'DI Yogyakarta',
+    province_name: 'Daerah Istimewa Yogyakarta',
     name: 'Gamelan (Bonang)',
     cara_main: 'Dipukul',
     image_url: 'https://example.com/music/bonang.jpg',

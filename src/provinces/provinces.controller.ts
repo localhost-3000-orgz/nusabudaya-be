@@ -25,6 +25,12 @@ export class ProvincesController {
     const province = await this.provincesService.findOne(+id);
     return ResponseHelper.success(province, "Province fetched successfully", HttpStatus.OK);
   }
+  
+  @Get('slug/:slug')
+  async findSlug(@Param('slug') slug: string) {
+    const province = await this.provincesService.findBySlug(slug);
+    return ResponseHelper.success(province, "Province fetched successfully", HttpStatus.OK);
+  }
 
   @Patch(':id')
   async update(@Param('id') id: string, @Body() updateProvinceDto: UpdateProvinceDto) {

@@ -1,7 +1,7 @@
 const provincesData = [
-  // --- SUMATERA ---
   {
-    name: 'Nanggroe Aceh Darussalam',
+    name: 'Aceh',
+    slug: 'aceh',
     capital_city: 'Banda Aceh',
     area_km2: 57956.00,
     anniversary_date: new Date('1956-12-07'),
@@ -11,6 +11,7 @@ const provincesData = [
   },
   {
     name: 'Sumatera Utara',
+    slug: 'sumatera-utara',
     capital_city: 'Medan',
     area_km2: 72981.23,
     anniversary_date: new Date('1948-04-15'),
@@ -20,6 +21,7 @@ const provincesData = [
   },
   {
     name: 'Sumatera Barat',
+    slug: 'sumatera-barat',
     capital_city: 'Padang',
     area_km2: 42012.89,
     anniversary_date: new Date('1945-10-01'),
@@ -29,6 +31,7 @@ const provincesData = [
   },
   {
     name: 'Riau',
+    slug: 'riau',
     capital_city: 'Pekanbaru',
     area_km2: 87023.66,
     anniversary_date: new Date('1957-08-09'),
@@ -38,6 +41,7 @@ const provincesData = [
   },
   {
     name: 'Kepulauan Riau',
+    slug: 'kepulauan-riau',
     capital_city: 'Tanjungpinang',
     area_km2: 8201.72,
     anniversary_date: new Date('2002-09-24'),
@@ -47,6 +51,7 @@ const provincesData = [
   },
   {
     name: 'Jambi',
+    slug: 'jambi',
     capital_city: 'Jambi',
     area_km2: 50058.16,
     anniversary_date: new Date('1957-01-06'),
@@ -56,6 +61,7 @@ const provincesData = [
   },
   {
     name: 'Sumatera Selatan',
+    slug: 'sumatera-selatan',
     capital_city: 'Palembang',
     area_km2: 91592.43,
     anniversary_date: new Date('1946-05-15'),
@@ -65,6 +71,7 @@ const provincesData = [
   },
   {
     name: 'Kepulauan Bangka Belitung',
+    slug: 'kepulauan-bangka-belitung',
     capital_city: 'Pangkalpinang',
     area_km2: 16424.06,
     anniversary_date: new Date('2000-11-21'),
@@ -74,6 +81,7 @@ const provincesData = [
   },
   {
     name: 'Bengkulu',
+    slug: 'bengkulu',
     capital_city: 'Bengkulu',
     area_km2: 19919.33,
     anniversary_date: new Date('1968-11-18'),
@@ -83,6 +91,7 @@ const provincesData = [
   },
   {
     name: 'Lampung',
+    slug: 'lampung',
     capital_city: 'Bandar Lampung',
     area_km2: 34623.80,
     anniversary_date: new Date('1964-03-18'),
@@ -90,10 +99,9 @@ const provincesData = [
     badge: 'Pawang Gajah Way Kambas',
     description: 'Gerbang Sumatera dari Jawa, terkenal dengan kopi dan Taman Nasional Way Kambas.',
   },
-
-  // --- JAWA ---
   {
-    name: 'DKI Jakarta',
+    name: 'Jakarta Raya',
+    slug: 'jakarta-raya',
     capital_city: 'Jakarta',
     area_km2: 664.01,
     anniversary_date: new Date('1527-06-22'),
@@ -103,6 +111,7 @@ const provincesData = [
   },
   {
     name: 'Banten',
+    slug: 'banten',
     capital_city: 'Serang',
     area_km2: 9662.92,
     anniversary_date: new Date('2000-10-04'),
@@ -112,6 +121,7 @@ const provincesData = [
   },
   {
     name: 'Jawa Barat',
+    slug: 'jawa-barat',
     capital_city: 'Bandung',
     area_km2: 35377.76,
     anniversary_date: new Date('1945-08-19'),
@@ -121,6 +131,7 @@ const provincesData = [
   },
   {
     name: 'Jawa Tengah',
+    slug: 'jawa-tengah',
     capital_city: 'Semarang',
     area_km2: 32800.69,
     anniversary_date: new Date('1950-08-15'),
@@ -129,7 +140,8 @@ const provincesData = [
     description: 'Pusat budaya Jawa, rumah bagi Candi Borobudur dan Prambanan.',
   },
   {
-    name: 'DI Yogyakarta',
+    name: 'Daerah Istimewa Yogyakarta',
+    slug: 'daerah-istimewa-yogyakarta',
     capital_city: 'Yogyakarta',
     area_km2: 3133.15,
     anniversary_date: new Date('1755-02-13'),
@@ -139,6 +151,7 @@ const provincesData = [
   },
   {
     name: 'Jawa Timur',
+    slug: 'jawa-timur',
     capital_city: 'Surabaya',
     area_km2: 47799.75,
     anniversary_date: new Date('1945-10-12'),
@@ -146,10 +159,9 @@ const provincesData = [
     badge: 'Arek-arek Suroboyo',
     description: 'Provinsi industri dengan keindahan Gunung Bromo dan semangat kepahlawanan.',
   },
-
-  // --- BALI & NUSA TENGGARA ---
   {
     name: 'Bali',
+    slug: 'bali',
     capital_city: 'Denpasar',
     area_km2: 5780.06,
     anniversary_date: new Date('1958-08-14'),
@@ -159,6 +171,7 @@ const provincesData = [
   },
   {
     name: 'Nusa Tenggara Barat',
+    slug: 'nusa-tenggara-barat',
     capital_city: 'Mataram',
     area_km2: 18572.32,
     anniversary_date: new Date('1958-12-17'),
@@ -168,6 +181,7 @@ const provincesData = [
   },
   {
     name: 'Nusa Tenggara Timur',
+    slug: 'nusa-tenggara-timur',
     capital_city: 'Kupang',
     area_km2: 48718.10,
     anniversary_date: new Date('1958-12-20'),
@@ -175,10 +189,9 @@ const provincesData = [
     badge: 'Komodo Dragon Master',
     description: 'Satu-satunya habitat Komodo di dunia dan memiliki keindahan Labuan Bajo.',
   },
-
-  // --- KALIMANTAN ---
   {
     name: 'Kalimantan Barat',
+    slug: 'kalimantan-barat',
     capital_city: 'Pontianak',
     area_km2: 147307.00,
     anniversary_date: new Date('1957-01-28'),
@@ -188,6 +201,7 @@ const provincesData = [
   },
   {
     name: 'Kalimantan Tengah',
+    slug: 'kalimantan-tengah',
     capital_city: 'Palangka Raya',
     area_km2: 153564.50,
     anniversary_date: new Date('1957-05-23'),
@@ -197,6 +211,7 @@ const provincesData = [
   },
   {
     name: 'Kalimantan Selatan',
+    slug: 'kalimantan-selatan',
     capital_city: 'Banjarbaru',
     area_km2: 38744.23,
     anniversary_date: new Date('1950-08-14'),
@@ -206,6 +221,7 @@ const provincesData = [
   },
   {
     name: 'Kalimantan Timur',
+    slug: 'kalimantan-timur',
     capital_city: 'Samarinda',
     area_km2: 129066.64,
     anniversary_date: new Date('1957-01-09'),
@@ -215,6 +231,7 @@ const provincesData = [
   },
   {
     name: 'Kalimantan Utara',
+    slug: 'kalimantan-utara',
     capital_city: 'Tanjung Selor',
     area_km2: 75467.70,
     anniversary_date: new Date('2012-10-25'),
@@ -222,10 +239,9 @@ const provincesData = [
     badge: 'Penjaga Perbatasan Borneo',
     description: 'Provinsi termuda di Kalimantan yang berbatasan langsung dengan Malaysia.',
   },
-
-  // --- SULAWESI ---
   {
     name: 'Sulawesi Utara',
+    slug: 'sulawesi-utara',
     capital_city: 'Manado',
     area_km2: 13851.64,
     anniversary_date: new Date('1964-09-23'),
@@ -235,6 +251,7 @@ const provincesData = [
   },
   {
     name: 'Gorontalo',
+    slug: 'gorontalo',
     capital_city: 'Gorontalo',
     area_km2: 11257.07,
     anniversary_date: new Date('2000-12-05'),
@@ -244,6 +261,7 @@ const provincesData = [
   },
   {
     name: 'Sulawesi Tengah',
+    slug: 'sulawesi-tengah',
     capital_city: 'Palu',
     area_km2: 61841.29,
     anniversary_date: new Date('1964-04-13'),
@@ -253,6 +271,7 @@ const provincesData = [
   },
   {
     name: 'Sulawesi Barat',
+    slug: 'sulawesi-barat',
     capital_city: 'Mamuju',
     area_km2: 16787.18,
     anniversary_date: new Date('2004-10-05'),
@@ -262,6 +281,7 @@ const provincesData = [
   },
   {
     name: 'Sulawesi Selatan',
+    slug: 'sulawesi-selatan',
     capital_city: 'Makassar',
     area_km2: 46717.48,
     anniversary_date: new Date('1960-10-19'),
@@ -271,6 +291,7 @@ const provincesData = [
   },
   {
     name: 'Sulawesi Tenggara',
+    slug: 'sulawesi-tenggara',
     capital_city: 'Kendari',
     area_km2: 38067.70,
     anniversary_date: new Date('1964-04-27'),
@@ -278,10 +299,9 @@ const provincesData = [
     badge: 'Penjaga Wakatobi',
     description: 'Surga bawah laut Wakatobi dan penghasil nikel utama.',
   },
-
-  // --- MALUKU ---
   {
     name: 'Maluku',
+    slug: 'maluku',
     capital_city: 'Ambon',
     area_km2: 46914.03,
     anniversary_date: new Date('1945-08-19'),
@@ -291,6 +311,7 @@ const provincesData = [
   },
   {
     name: 'Maluku Utara',
+    slug: 'maluku-utara',
     capital_city: 'Sofifi',
     area_km2: 31982.50,
     anniversary_date: new Date('1999-10-04'),
@@ -298,19 +319,19 @@ const provincesData = [
     badge: 'Raja Empat Kesultanan',
     description: 'Negeri para raja (Moloku Kie Raha) dengan sejarah Ternate dan Tidore.',
   },
-
-  // --- PAPUA ---
   {
     name: 'Papua',
+    slug: 'papua',
     capital_city: 'Jayapura',
     area_km2: 81049.30,
-    anniversary_date: new Date('1963-05-01'), // Integrasi
+    anniversary_date: new Date('1963-05-01'),
     icon_url: 'https://example.com/icons/papua.png',
     badge: 'Cenderawasih Seeker',
     description: 'Induk provinsi di tanah Papua, kaya akan budaya dan keindahan alam.',
   },
   {
     name: 'Papua Barat',
+    slug: 'papua-barat',
     capital_city: 'Manokwari',
     area_km2: 60275.33,
     anniversary_date: new Date('1999-10-04'),
@@ -320,6 +341,7 @@ const provincesData = [
   },
   {
     name: 'Papua Selatan',
+    slug: 'papua-selatan',
     capital_city: 'Merauke',
     area_km2: 117849.16,
     anniversary_date: new Date('2022-07-25'),
@@ -329,6 +351,7 @@ const provincesData = [
   },
   {
     name: 'Papua Tengah',
+    slug: 'papua-tengah',
     capital_city: 'Nabire',
     area_km2: 61073.18,
     anniversary_date: new Date('2022-07-25'),
@@ -338,6 +361,7 @@ const provincesData = [
   },
   {
     name: 'Papua Pegunungan',
+    slug: 'papua-pegunungan',
     capital_city: 'Wamena',
     area_km2: 51213.33,
     anniversary_date: new Date('2022-07-25'),
@@ -347,13 +371,14 @@ const provincesData = [
   },
   {
     name: 'Papua Barat Daya',
+    slug: 'papua-barat-daya',
     capital_city: 'Sorong',
     area_km2: 39122.95,
     anniversary_date: new Date('2022-12-08'),
     icon_url: 'https://example.com/icons/papuabaratdaya.png',
     badge: 'Raja Ampat Explorer',
     description: 'Rumah bagi surga penyelam dunia, Kepulauan Raja Ampat.',
-  },
+  }
 ];
 
 export default provincesData;
