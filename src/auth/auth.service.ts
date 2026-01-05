@@ -25,7 +25,12 @@ export class AuthService {
       });
     }
 
-    const payload = { email: user.email, sub: user.id };
+    const payload = { 
+      sub: user.id, 
+      email: user.email, 
+      name: [user.firstName, user.lastName].filter(Boolean).join(' '), 
+      avatar: user.picture, 
+    };
     return {
       access_token: this.jwtService.sign(payload),
       user,
