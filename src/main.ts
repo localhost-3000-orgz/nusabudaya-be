@@ -22,6 +22,7 @@ async function bootstrap() {
       'http://localhost:3000', 
       'http://localhost:3001',
       'https://nusabudaya.vercel.app',
+      'https://nusabudaya.id',
     ],
     credentials: true
   });
