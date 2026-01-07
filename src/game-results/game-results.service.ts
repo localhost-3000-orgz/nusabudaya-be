@@ -94,7 +94,7 @@ export class GameResultsService {
     const totalXp = gameResults.reduce((acc, result) => acc + (result.xp || 0), 0);
 
     // Count province badge
-    const badges = await this.achievementsService.findAll(userId);
+    const badges = await this.achievementsService.findByUser(userId);
     const badgeCount = badges.length;
 
     return {

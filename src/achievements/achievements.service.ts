@@ -27,7 +27,13 @@ export class AchievementsService {
       throw new NotFoundException('Province not found');
     }
 
+    const count = await this.achievementRepository.count({
+      where: { province: { id: province.id } }
+    });
+    const rank = count + 1;
+
     const achievement = this.achievementRepository.create({
+      rank,
       user,
       province
     });
@@ -35,10 +41,24 @@ export class AchievementsService {
     return await this.achievementRepository.save(achievement);
   }
 
-  async findAll(userId: string) {
+  async findByUser(userId: string) {
     return await this.achievementRepository.find({
       where: { user: { id: userId } },
       relations: ['province'],
+    });
+  }
+
+  async findAll(provinceId?: number) {
+    if (provinceId !== undefined) {
+      return await this.achievementRepository.find({
+        where: { province: { id: provinceId } },
+        relations: ['province', 'user'],
+        order: { rank: 'ASC' },
+      });
+    }
+    return await this.achievementRepository.find({
+      relations: ['province', 'user'],
+      order: { rank: 'ASC' },
     });
   }
 

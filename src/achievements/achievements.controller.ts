@@ -24,9 +24,19 @@ export class AchievementsController {
   }
 
   @Get()
-  async findAll(@Req() req: any) {
+  async findByUser(@Req() req: any) {
     const userId = req.user.id;
-    const achievements = await this.achievementsService.findAll(userId);
+    const achievements = await this.achievementsService.findByUser(userId);
+    return ResponseHelper.success(
+      achievements,
+      "Achievements fetched successfully"
+    );
+  }
+
+  @Get('/all')
+  async findAll(@Req() req: any) {
+    const provinceId = req.query.province_id ? Number(req.query.province_id) : undefined;
+    const achievements = await this.achievementsService.findAll(provinceId);
     return ResponseHelper.success(
       achievements,
       "Achievements fetched successfully"
