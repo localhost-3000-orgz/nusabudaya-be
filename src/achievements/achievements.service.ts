@@ -48,18 +48,23 @@ export class AchievementsService {
     });
   }
 
-  async findAll(provinceId?: number) {
+  async findAll(provinceId?: number, userId?: string) {
     if (provinceId !== undefined) {
-      return await this.achievementRepository.find({
-        where: { province: { id: provinceId } },
+      const achievements = await this.achievementRepository.find({
+        where: {
+          province: { id: provinceId },
+        },
         relations: ['province', 'user'],
         order: { rank: 'ASC' },
       });
+      const userAchievement = achievements.find(a => a.user.id === userId);
+      const userRank = userAchievement ? userAchievement.rank : null;
+      return { 
+        user_rank: userRank,
+        total_achiever: achievements.length, 
+        achievements 
+      };
     }
-    return await this.achievementRepository.find({
-      relations: ['province', 'user'],
-      order: { rank: 'ASC' },
-    });
   }
 
   async findByProvince(provinceId: number, userId: string) {
