@@ -61,15 +61,15 @@ const runSeed = async () => {
     const factoryManager = new SeederFactoryManager();
 
     //===== START SEEDER =====
-    // await seedProvinces(dataSource);
-    // await seedTraditions(dataSource);
-    // await seedCulinaries(dataSource);
-    // await seedMusicalInstruments(dataSource);
-    // await seedTraditionalDances(dataSource);
-    // await seedTraditionalHouses(dataSource);
-    // await seedTraditionalWeapons(dataSource);
-    // await seedTraditionalSpots(dataSource);
-    // await seedRegionalSongs(dataSource);
+    await seedProvinces(dataSource);
+    await seedTraditions(dataSource);
+    await seedCulinaries(dataSource);
+    await seedMusicalInstruments(dataSource);
+    await seedTraditionalDances(dataSource);
+    await seedTraditionalHouses(dataSource);
+    await seedTraditionalWeapons(dataSource);
+    await seedTraditionalSpots(dataSource);
+    await seedRegionalSongs(dataSource);
 
     const quizSeeder = new QuizSeeder();
     await quizSeeder.run(dataSource, factoryManager);

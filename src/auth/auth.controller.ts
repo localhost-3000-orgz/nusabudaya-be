@@ -24,11 +24,15 @@ export class AuthController {
     const result = await this.authService.googleLogin(req);
     const FRONTEND_URL = this.configService.get<string>('FRONTEND_URL') || 'localhost:3000';
 
+    const isProduction = process.env.NODE_ENV === 'production';
+
     res.cookie('access_token', result.access_token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production', 
-      sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
-      maxAge: 7 * 24 * 60 * 60, // 7 hari
+      secure: isProduction, 
+      sameSite: 'lax',
+      path: '/',
+      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 hari
+      domain: isProduction ? '.nusabudaya.id' : undefined
     })
 
     return res.redirect(`${FRONTEND_URL}/atlas`);
