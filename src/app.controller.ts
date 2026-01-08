@@ -12,6 +12,6 @@ export class AppController {
   }
 
   @Get('docs')
-  @Redirect('https://github.com/localhost-3000-orgz/nusabudaya-be', 302)
+  @Redirect('https://github.com/localhost-orgz/nusabudaya-be', 302)
   getDocs() {}
 }

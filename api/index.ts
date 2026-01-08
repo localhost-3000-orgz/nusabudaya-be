@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from '../src/app.module';
 import { ValidationPipe } from '@nestjs/common';
+import cookieParser from 'cookie-parser';
 
 let cachedServer;
 
@@ -16,7 +17,17 @@ export default async function handler(req, res) {
       }),
     );
 
-    app.enableCors();
+    app.use(cookieParser());
+
+    app.enableCors({
+      origin: [
+        'http://localhost:3000', 
+        'http://localhost:3001',
+        'https://nusabudaya.vercel.app',
+        'https://nusabudaya.id',
+      ],
+      credentials: true
+    });
 
     await app.init();
     cachedServer = app.getHttpAdapter().getInstance();
