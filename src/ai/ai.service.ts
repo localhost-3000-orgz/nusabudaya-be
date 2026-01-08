@@ -80,4 +80,61 @@ export class AiService {
          throw new BadRequestException('Gagal menganalisis gambar, Silahkah coba lagi')
       }
    }
+
+   async generateBatik(file: Express.Multer.File, deskripsi: String) {
+      if(!file) {
+         throw new BadRequestException('Tidak ada batik terkirim');
+      }
+
+      const imagePart = {
+         inlineData: {
+            data: file.buffer.toString('base64'),
+            mimeType: file.mimetype
+         }
+      }
+
+      const promptDescribe = `
+         Deskripsikan objek utama dalam gambar ini dalam Bahasa Inggris secara sangat singkat (maksimal 3-5 kata). 
+         Contoh output: "Majestic Eagle" atau "Blooming Rose" atau "Playing Guitar".
+         Jangan ada kata pengantar.
+      `;
+
+      const result = await this.model.generateContent([promptDescribe, imagePart]);
+      const description = result.response.text().trim();
+
+      const batikPrompt = `Indonesian traditional batik pattern of ${description}, intricate wax resist texture, repeating seamless pattern, javanese ornament, detailed, 4k, earthy colors`;
+      
+      const encodedPrompt = encodeURIComponent(batikPrompt);
+      const imageUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=768&height=768&nologo=true&seed=${Math.random()}`;
+
+      // Kita fetch gambarnya agar bisa dikirim sebagai Base64 ke frontend
+      // (Atau kirim URL-nya saja kalau frontend mau load langsung)
+      const response = await fetch(imageUrl); // Native fetch
+      const arrayBuffer = await response.arrayBuffer();
+      const buffer = Buffer.from(arrayBuffer);
+      const base64Image = buffer.toString('base64')
+
+      try {
+         const result = await this.model.generateContent([prompt, imagePart]);
+         const response = await result.response;
+         let text = response.text();
+
+         text = text.replace(/^```(svg|xml)?|```$/g, '').trim();
+
+         if (!text.startsWith('<svg') || !text.endsWith('</svg>')) {
+            const startIndex = text.indexOf('<svg');
+            const endIndex = text.lastIndexOf('</svg>') + 6;
+            if (startIndex !== -1 && endIndex !== -1) {
+               text = text.substring(startIndex, endIndex);
+            } else {
+               throw new Error("Output AI bukan SVG valid");
+            }
+         }
+
+         return text;
+      } catch (error) {
+         console.error('Gemini Error:', error);
+         throw new BadRequestException('Gagal menganalisis gambar, Silahkah coba lagi')
+      }
+   }
 }

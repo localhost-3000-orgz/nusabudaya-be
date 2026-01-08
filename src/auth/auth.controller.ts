@@ -46,9 +46,14 @@ export class AuthController {
 
   @Post('logout')
   logout(@Res() res: Response) {
+    const isProduction = process.env.NODE_ENV === 'production';
+
     res.clearCookie('access_token', {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
+      secure: isProduction,
+      sameSite: 'lax',
+      path: '/',
+      domain: isProduction ? '.nusabudaya.id' : undefined
     });
     return res.status(200).json({ message: 'Logged out successfully' });
   }
