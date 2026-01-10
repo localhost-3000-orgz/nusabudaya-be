@@ -71,6 +71,18 @@ export class GameResultsService {
     };
   }
 
+  async findGlobal() {
+    const results = await this.gameResultsRepository
+      .createQueryBuilder("game_result")
+      .select("game_result.user_id", "user_id")
+      .addSelect("SUM(game_result.xp)", "total_xp")
+      .groupBy("game_result.user_id")
+      .orderBy("total_xp", "DESC")
+      .getRawMany();
+
+    return results;
+  }
+
   async findAllByUserId(
     userId: string,
     type?: string,

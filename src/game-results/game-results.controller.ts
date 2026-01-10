@@ -39,6 +39,16 @@ export class GameResultsController {
     );
   }
 
+  @Get('global')
+  async findGlobal() {
+    const leaderboard = await this.gameResultsService.findGlobal();
+    return ResponseHelper.success(
+      leaderboard,
+      "Leaderboard global fetch successfully",
+      HttpStatus.OK,
+    );
+  }
+
   @Get(':id')
   async findOne(@Param('id') id: string) {
     const gameResult = await this.gameResultsService.findOne(+id);
